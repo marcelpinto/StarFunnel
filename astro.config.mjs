@@ -29,6 +29,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'My delightful docs site',
+      disable404Route: true,
     }),
     icon(),
     mdx({}),
