@@ -13,6 +13,7 @@ import vue from "@astrojs/vue";
 import icon from "astro-icon";
 import netlify from "@astrojs/netlify";
 import vercel from "@astrojs/vercel/serverless";
+import starlight from "@astrojs/starlight";
 const m2dxOptions = {
   exportComponents: true,
   unwrapImages: true,
@@ -23,8 +24,12 @@ const m2dxOptions = {
 export default defineConfig({
   site: "https://starfunnel.unfolding.io",
   output: "hybrid",
-  adapter: vercel(), // vercel() or netlify()
+  adapter: vercel(),
+  // vercel() or netlify()
   integrations: [
+    starlight({
+      title: 'My delightful docs site',
+    }),
     icon(),
     mdx({}),
     sitemap(),
